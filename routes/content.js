@@ -21,7 +21,7 @@ function ContentHandler (db) {
                 myposts: results
             });
         });
-    }
+    }	
 
     this.displayMainPageByTag = function(req, res, next) {
         "use strict";
@@ -38,6 +38,17 @@ function ContentHandler (db) {
                 username: req.username,
                 myposts: results
             });
+        });
+    }
+	
+	
+	this.displayAboutPage = function(req, res, next) {
+        "use strict";
+
+
+
+        return res.render('about_template', {
+            title: 'about',
         });
     }
 
