@@ -3,6 +3,8 @@ var express = require('express')
   , cons = require('consolidate') // Templating library adapter for Express
   , MongoClient = require('mongodb').MongoClient // Driver for connecting to MongoDB
   , routes = require('./routes'); // Routes for our application
+  
+var path = require('path');
 
 MongoClient.connect('mongodb://localhost:27017/blog', function(err, db) {
     "use strict";
@@ -18,6 +20,12 @@ MongoClient.connect('mongodb://localhost:27017/blog', function(err, db) {
 
     // Express middleware to populate 'req.body' so we can access POST variables
     app.use(express.bodyParser());
+	
+	//add public paths
+	app.use("/images", express.static(path.join(__dirname, '/public/images')));
+	app.use("/css", express.static(path.join(__dirname, '/public/css')));
+	app.use("/js", express.static(path.join(__dirname, '/public/js')));
+	app.use("/fonts", express.static(path.join(__dirname, '/public/fonts')));
 
     // Application routes
     routes(app, db);
