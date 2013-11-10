@@ -1,5 +1,6 @@
 var SessionHandler = require('./session')
   , ContentHandler = require('./content')
+  , PageHandler = require('./page') //static pages
   , ErrorHandler = require('./error').errorHandler;
 
 module.exports = exports = function(app, db) {
