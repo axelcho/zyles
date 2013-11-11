@@ -1,7 +1,7 @@
 var express = require('express')
   , app = express() // Web framework to handle routing requests
   , cons = require('consolidate') // Templating library adapter for Express
-  , swiq = require('swig')
+  , swig = require('swig')
   , MongoClient = require('mongodb').MongoClient // Driver for connecting to MongoDB
   , routes = require('./routes'); // Routes for our application
   
