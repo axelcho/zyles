@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-
-<html>
-  <head>
-    <title>Welcome</title>
-    <style type="text/css">
-      .label {text-align: right}
-      .error {color: red}
-    </style>
-
-  </head>
-
-  <body>
+{% extends 'layout.html' %}
+{% block content %}
     Welcome {{username}}
 <p>
 <ul>
@@ -21,8 +10,4 @@
 <li>
 <a href="/newpost">Create a New Post</a>
 </li>
-
-
-  </body>
-
-</html>
+{% endblock %}

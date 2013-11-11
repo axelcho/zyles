@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>My Blog</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+{% block content %}
 
-{% if username %}
-Welcome {{username}}        <a href="/logout">Logout</a> | <a href="/newpost">New Post</a><p>
-{% else %}
-You are not logged in!        <a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
-{% endif %}
-
-<h1>About</h1>
+<h1>About Seong Cho</h1>
 <p>
-About Me
+Seong Cho is an awesome human (witnessed by Gabby, 13 years old Golden Retriever).
 </p>
 
-</body>
-</html>
+<p>
+Seong Cho has warm, fuzzy belly (witnessed by Hazel, a tabby cat with attitude). 
+</p>
 
+{% endblock %}
 

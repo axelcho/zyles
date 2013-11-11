@@ -1,17 +1,5 @@
-<!doctype HTML>
-<html
-<head>
-<title>
-Blog Post
-</title>
-</head>
-<body>
-{% if username %}
-Welcome {{username}}        <a href="/logout">Logout</a> | <a href="/newpost">New Post</a><p>
-{% else %}
-You are not logged in!        <a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
-{% endif %}
-<a href="/">Blog Home</a><br><br>
+{% extends 'layout.html' %}
+{% block content %}
 
 <h2>{{post['title']}}</h2>
 Posted {{post['date']}}<i> By {{post['author']}}</i><br>
@@ -48,7 +36,5 @@ Author: {{comment['author']}}<br>
 <textarea name="commentBody" cols="60" rows="10">{{comment['body']}}</textarea><br>
 <input type="submit" value="Submit">
 </ul>
-</body>
-</html>
-
+{% endblock %}
 
