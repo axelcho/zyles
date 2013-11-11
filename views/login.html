@@ -1,34 +1,12 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <h2>Login</h2>
-    <form method="post">
-      <table>
-        <tr>
-          <td class="label">
-            Username
-          </td>
-          <td>
-            <input type="text" name="username" value="{{username}}">
-          </td>
-          <td class="error">
-          </td>
-        </tr>
+	 <form class="form-signin" method = "post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="form-control" placeholder="Username" required autofocus name = "username" value = {{username}}>
+        <input type="password" class="form-control" placeholder="Password" required name  = "password" value = "">
 
-        <tr>
-          <td class="label">
-            Password
-          </td>
-          <td>
-            <input type="password" name="password" value="">
-          </td>
-          <td class="error">
-	    {{login_error}}
-            
-          </td>
-        </tr>
-
-      </table>
-
-      <input type="submit">
-    </form>
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+	  {{login_error}}
 {% endblock %}
