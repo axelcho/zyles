@@ -2,7 +2,7 @@
 function PageHandler (db) {
     "use strict";
 
-    this.displayAboutPage = function(req, res, next) {
+    this.displayPage = function(req, res, next) {
         "use strict";
 	var page = req.params.page;
 
