@@ -34,27 +34,26 @@
       <li><a href="/page/about">About</a></li>
 
     </ul>
-   
+	<p class="navbar-text">
+	{% if username %}
+
+Welcome {{username}}        
+{% else %}
+ You are not logged in!         
+{% endif %}
+   </p>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">Link</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
-      </li>
+
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
 
 {% if username %}
-Welcome {{username}}        <a href="/logout">Logout</a> | <a href="/newpost">New Post</a><p>
+<p class="navbar-text">
+Welcome {{username}}       </p> <a href="/logout">Logout</a> | <a href="/newpost">New Post</a><p>
 {% else %}
-You are not logged in!        <a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
+<p class="navbar-text"> You are not logged in! </p>        <a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
 {% endif %}
 
 {% block content %}{% endblock %}
