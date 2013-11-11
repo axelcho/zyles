@@ -2,8 +2,6 @@
 function PageHandler (db) {
     "use strict";
 
-    var posts = new PostsDAO(db);
-
     this.displayAboutPage = function(req, res, next) {
         "use strict";
 	var page = req.params.page;
