@@ -44,18 +44,19 @@ Welcome {{username}}
 {% endif %}
    </p>
    
-      <li><a href="#">Link</a></li>
-
+   {% if username %}
+   
+      <li><a href="/logout">Logout</a>></li>
+      <li><<a href="/newpost">New Post</a></li>
+	
+   {% else %}  
+	  
+	  <li><a href="/login">Login</a></li>
+      <li><a href="/signup">Sign Up</a></li>
+   {% endif %} 
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
-
-{% if username %}
-<p class="navbar-text">
-Welcome {{username}}       </p> <a href="/logout">Logout</a> | <a href="/newpost">New Post</a><p>
-{% else %}
-<p class="navbar-text"> You are not logged in! </p>        <a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
-{% endif %}
 
 {% block content %}{% endblock %}
 
