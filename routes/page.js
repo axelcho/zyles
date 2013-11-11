@@ -11,7 +11,7 @@ function PageHandler (db) {
         "use strict";
 	var page = req.params.page;
 
-        return res.render(page, {
+        return res.render("page_" + page, {
             title: page,
 			username: req.username,
         });
