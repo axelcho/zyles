@@ -14,7 +14,6 @@ function PageHandler (db) {
         return res.render(page, {
             title: page,
 			username: req.username,
-            myposts: results
         });
     }
 
