@@ -30,6 +30,9 @@ MongoClient.connect('mongodb://localhost:27017/blog', function(err, db) {
 	app.use("/css", express.static(path.join(__dirname, '/public/css')));
 	app.use("/js", express.static(path.join(__dirname, '/public/js')));
 	app.use("/fonts", express.static(path.join(__dirname, '/public/fonts')));
+	
+	//add favicon
+	app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
 
     // Application routes
     routes(app, db);
