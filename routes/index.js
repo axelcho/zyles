@@ -7,6 +7,7 @@ module.exports = exports = function(app, db) {
 
     var sessionHandler = new SessionHandler(db);
     var contentHandler = new ContentHandler(db);
+	var pageHandler = new PageHandler(db);
 
     // Middleware to see if a user is logged in
     app.use(sessionHandler.isLoggedInMiddleware);
@@ -15,7 +16,7 @@ module.exports = exports = function(app, db) {
     app.get('/', contentHandler.displayMainPage);
 
 	//about page
-	app.get('/about', contentHandler.displayAboutPage);
+	app.get('/page/:page', pageHandler.displayPage);
 	
     // The main page of the blog, filtered by tag
     app.get('/tag/:tag', contentHandler.displayMainPageByTag);
