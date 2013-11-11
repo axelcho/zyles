@@ -1,6 +1,7 @@
 var express = require('express')
   , app = express() // Web framework to handle routing requests
   , cons = require('consolidate') // Templating library adapter for Express
+  , swiq = require('swig')
   , MongoClient = require('mongodb').MongoClient // Driver for connecting to MongoDB
   , routes = require('./routes'); // Routes for our application
   
@@ -14,11 +15,11 @@ MongoClient.connect('mongodb://localhost:27017/blog', function(err, db) {
     app.engine('html', cons.swig);
     app.set('view engine', 'html');
     app.set('views', __dirname + '/views');
-	
+
 	/* Tell swig where to look for templates when one extends another. */
 	swig.init({ root: __dirname + '/views' });
-
-    // Express middleware to populate 'req.cookies' so we can access cookies
+    
+	// Express middleware to populate 'req.cookies' so we can access cookies
     app.use(express.cookieParser());
 
     // Express middleware to populate 'req.body' so we can access POST variables
