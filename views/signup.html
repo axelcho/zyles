@@ -1,67 +1,22 @@
 {% extends 'layout.html' %}
 {% block head %}
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+    <link href="/css/signin.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
-  <body>
-    Already a user? <a href="/login">Login</a><p>
-    <h2>Signup</h2>
-    <form method="post">
-      <table>
-        <tr>
-          <td class="label">
-            Username
-          </td>
-          <td>
-            <input type="text" name="username" value="{{username}}">
-          </td>
-          <td class="error">
-	    {{username_error}}
-            
-          </td>
-        </tr>
-
-        <tr>
-          <td class="label">
-            Password
-          </td>
-          <td>
-            <input type="password" name="password" value="">
-          </td>
-          <td class="error">
-	    {{password_error}}
-            
-          </td>
-        </tr>
-
-        <tr>
-          <td class="label">
-            Verify Password
-          </td>
-          <td>
-            <input type="password" name="verify" value="">
-          </td>
-          <td class="error">
-	    {{verify_error}}
-            
-          </td>
-        </tr>
-
-        <tr>
-          <td class="label">
-            Email (optional)
-          </td>
-          <td>
-            <input type="text" name="email" value="{{email}}">
-          </td>
-          <td class="error">
-	    {{email_error}}
-            
-          </td>
-        </tr>
-      </table>
-
-      <input type="submit">
-    </form>
+    <p>Already a user? <a href="/login">Login</a></p>
+	 <form class="form-signin" method = "post">
+        <h2 class="form-signin-heading">Sign Up</h2>
+        <input type="text" class="form-control" placeholder="Username" required autofocus name = "username" value = {{username}}>{{username_error}}
+        <input type="password" class="form-control" placeholder="Password" required name  = "password" value = "">{{password_error}}
+		<input type="password" class="form-control" placeholder="Verify Passowrd" required name  = "verify" value = "">{{verify_error}}
+		<input type="text" class="form-control" placeholder="Email(Optional)" name="email" value="{{email}}">{{email_error}}
+		
+		
+     
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+	
+	
+	
 {% endblock %}
