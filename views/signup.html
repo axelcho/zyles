@@ -4,8 +4,9 @@
     <link href="/css/signin.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
-    <p>Already a user? <a href="/login">Login</a></p>
+    
 	 <form class="form-signin" method = "post">
+	    <h2 class="form-signin-heading">Already a user? <a href="/login">Login</a></h2>
         <h2 class="form-signin-heading">Sign Up</h2>
         <input type="text" class="form-control" placeholder="Username" required autofocus name = "username" value = {{username}}>{{username_error}}
         <input type="password" class="form-control" placeholder="Password" required name  = "password" value = "">{{password_error}}
