@@ -6,7 +6,11 @@
 
 .jumbotron-filled{
 background: url("/images/map.jpg");
-color: #000000; 
+font-size:12pt;
+font-family:times new roman;
+font-weight:bold;
+font-style:italic;
+color: #d1bf76; 
 }
 
 .btn-brown{
