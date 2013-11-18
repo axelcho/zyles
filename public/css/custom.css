@@ -11,7 +11,6 @@ color: #F3E2A9;
 
 .btn-brown{
 background-color: #3B170B;
-color: #F3E2A9;
 }
 
 .navbar-brown{
@@ -23,3 +22,8 @@ color: #F3E2A9;
 .container-brown a:visited {color:#3B170B;} 
 .container-brown a:hover {color:#F3E2A9;}   
 .container-brown a:active {color:#F3E2A9;}  
+
+.btn-brown a:link {color:#F3E2A9;}    
+.btn-brown a:visited {color:#F3E2A9;} 
+.btn-brown a:hover {color:#F3E2A9;}   
+.btn-brown a:active {color:#F3E2A9;} 
