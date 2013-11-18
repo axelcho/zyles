@@ -3,3 +3,8 @@
   margin-bottom: 0;
   border-width: 1px 0 0;
 }
+
+.jumbotron-filled{
+
+background: url("/images/favicon.ico");
+}
