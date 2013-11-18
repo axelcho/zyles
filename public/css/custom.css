@@ -19,7 +19,7 @@ color: #F3E2A9;
  color: #F3E2A9;
 }
 
-.container-brown.a:link {color:#3B170B;}    
-.container-brown.a:visited {color:#3B170B;} 
-.container-brown.a:hover {color:#F3E2A9;}   
-.container-brown.a:active {color:#F3E2A9;}  
+a:link {color:#3B170B;}    
+a:visited {color:#3B170B;} 
+a:hover {color:#F3E2A9;}   
+a:active {color:#F3E2A9;}  
