@@ -7,7 +7,7 @@ function ContentHandler (db) {
 
     var posts = new PostsDAO(db);
 
-    this.displayMainPage = function(req, res, next) {
+    this.displayBlogPage = function(req, res, next) {
         "use strict";
 
         posts.getPosts(10, function(err, results) {
@@ -20,6 +20,17 @@ function ContentHandler (db) {
                 username: req.username,
                 myposts: results
             });
+        });
+    }
+
+
+	this.displayMainPage = function(req, res, next) {
+        "use strict";
+
+
+
+        return res.render('main_template', {
+            title: 'main',
         });
     }	
 
@@ -42,15 +53,9 @@ function ContentHandler (db) {
     }
 	
 	
-	this.displayAboutPage = function(req, res, next) {
-        "use strict";
+	
+	
 
-
-
-        return res.render('about_template', {
-            title: 'about',
-        });
-    }
 
     this.displayPostByPermalink = function(req, res, next) {
         "use strict";

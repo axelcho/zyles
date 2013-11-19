@@ -12,8 +12,11 @@ module.exports = exports = function(app, db) {
     // Middleware to see if a user is logged in
     app.use(sessionHandler.isLoggedInMiddleware);
 
-    // The main page of the blog
+    // The main page
     app.get('/', contentHandler.displayMainPage);
+	
+	//The blog page
+	app.get('/blog', contentHandler.displayBlogPage);
 
 	//about page
 	app.get('/page/:page', pageHandler.displayPage);
