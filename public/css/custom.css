@@ -15,14 +15,14 @@
 }
 
 
-.sname {
+.jumbotron-sname {
 font-size:18pt;
 font-family:times new roman;
 font-weight:bold;
 font-style:italic;
 color: #d1bf76; 
 }
-.stext {
+.jumbotron-stext {
 font-size:14pt;
 font-family:times new roman;
 font-weight:bold;
@@ -30,16 +30,9 @@ font-style:italic;
 color: #d1bf76; 
 }
 
-
-.sbtn-brown{
-background-color: #3B170B;
-color: #000000;
-}
-
-
 .btn-brown{
 background-color: #3B170B;
-color: #F3E2A9;
+color: #000000;
 }
 
 .navbar-brown{
@@ -54,15 +47,6 @@ color: #F3E2A9;
 
 .container-brown{
 padding: 20px;
-
 }
 
-.two-thirds{
-float:left;
-width: 67%;
-}
 
-.one-thirds{
-float:left;
-width: 33%;
-}
