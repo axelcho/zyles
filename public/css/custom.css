@@ -51,3 +51,18 @@ color: #F3E2A9;
 .container-brown a:visited {color:#3B170B;} 
 .container-brown a:hover {color:#F3E2A9;}   
 .container-brown a:active {color:#F3E2A9;}  
+
+.container-brown{
+padding: 20px;
+
+}
+
+.two-thirds{
+float:left;
+width: 67%;
+}
+
+.one-thirds{
+float:left;
+width: 33%;
+}
