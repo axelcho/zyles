@@ -7,6 +7,7 @@
 .jumbotron-filled{
 	background: url("/images/map.jpg");
 	height: 400px;
+	margin-bottom: 0px;
 }
 
 .brown{
