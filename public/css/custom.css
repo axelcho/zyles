@@ -5,7 +5,14 @@
 }
 
 .jumbotron-filled{
-background: url("/images/map.jpg");}
+	background: url("/images/map.jpg");
+}
+
+.brown{
+	background-color: #3B170B;
+}
+
+
 .sname {
 font-size:18pt;
 font-family:times new roman;
