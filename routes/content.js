@@ -7,6 +7,7 @@ function ContentHandler (db) {
 
     var posts = new PostsDAO(db);
 
+	//blog main page
     this.displayBlogPage = function(req, res, next) {
         "use strict";
 
@@ -23,7 +24,7 @@ function ContentHandler (db) {
         });
     }
 
-
+	//site main page
 	this.displayMainPage = function(req, res, next) {
         "use strict";
 
@@ -34,6 +35,7 @@ function ContentHandler (db) {
         });
     }	
 
+	//page by tags
     this.displayMainPageByTag = function(req, res, next) {
         "use strict";
 
@@ -54,9 +56,7 @@ function ContentHandler (db) {
 	
 	
 	
-	
-
-
+	//page by permalink
     this.displayPostByPermalink = function(req, res, next) {
         "use strict";
 

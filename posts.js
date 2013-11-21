@@ -1,9 +1,7 @@
-/* The PostsDAO must be constructed with a connected database object */
 function PostsDAO(db) {
     "use strict";
 
-    /* If this constructor is called without the "new" operator, "this" points
-     * to the global object. Log a warning and call it correctly. */
+
     if (false === (this instanceof PostsDAO)) {
         console.log('Warning: PostsDAO constructor called without "new" operator');
         return new PostsDAO(db);
@@ -34,12 +32,7 @@ function PostsDAO(db) {
 			{
 			if (err) callback(err, null);			
 			callback(null, post.permalink); 			
-			});
-		
-		
-		
-        // hw3.2 TODO
-        //callback(Error("insertEntry NYI"), null);
+			});		
     }
 
     this.getPosts = function(num, callback) {
@@ -90,9 +83,7 @@ function PostsDAO(db) {
             comment['email'] = email
         }
 
-        // hw3.3 TODO
-		
-		var query = {'permalink': permalink};
+        var query = {'permalink': permalink};
 		var operator = {'$push': {'comments': comment}};
 		
 		db.collection('posts').update(query, operator, function(err, updated)
@@ -100,10 +91,7 @@ function PostsDAO(db) {
 		if (err) callback(err, null);		
 		callback(null, updated.permalink);
 		
-		});
-		
-		
-        //callback(Error("addComment NYI"), null);
+		});        
     }
 }
 

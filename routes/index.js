@@ -15,7 +15,7 @@ module.exports = exports = function(app, db) {
     // The main page
     app.get('/', contentHandler.displayMainPage);
 	
-	//The blog page
+	//The blog main page
 	app.get('/blog', contentHandler.displayBlogPage);
 
 	//about page
