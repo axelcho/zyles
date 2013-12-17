@@ -21,7 +21,7 @@ module.exports = exports = function(app, db) {
 	app.get('/blog', contentHandler.displayBlogPage);
 
 	//vocabulary page
-	//app.get('/vocabulary', contentHandler.displayVocabulary); 
+	app.get('/vocabulary', contentHandler.displayMainPage); 
 	
 	//about page
 	app.get('/page/:page', pageHandler.displayPage);
