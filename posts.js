@@ -9,6 +9,24 @@ function PostsDAO(db) {
 
     var posts = db.collection("posts");
 	var vocab = db.collection("vocabularay"); 
+	
+	
+	this.getVocab = function(callback){
+		"use strict";
+		console.log("calling vocabulary");
+		count = vocab.count();		
+		random = Math.floor(Math.random()*count);
+		
+		vocab.findOne({ '_id' : random }, function(err, vocab) {
+            "use strict";
+
+            if (err) return callback(err, null);
+
+            callback(null, vocab);
+        });
+	
+	
+	}
 
     this.insertEntry = function (title, body, tags, author, callback) {
         "use strict";

@@ -16,10 +16,11 @@ function ContentHandler (db) {
 
             if (err) return next(err);
 
-            return res.render('blog_template', {
-                title: 'blog homepage',
+            return res.render('vocabulary', {
+                title: 'Vocabulary',				
                 username: req.username,
-                myposts: results
+                item: results
+            });
             });
         });
 		
