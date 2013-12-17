@@ -1,15 +1,13 @@
 {% extends 'layout.html' %}
 {% block content %}
     Welcome {{username}}
+<p class = 'lead'>
+ <h1>{{item.word}} <small>{{item.part}}</small></h1>
+<blockquote>
 <p>
-<ul>
-<li> {{item.word}} </li>
-<li>Part: {{item.part}}</li>
-<li>
 Definition:{{item.definition}} 
-</li>
-
-</ul>
-
+</p>
+</blockquote>
+</p>
 <a href = "/vocabulary"><button type="button" class="btn btn-success">More</button></a>
 {% endblock %}
