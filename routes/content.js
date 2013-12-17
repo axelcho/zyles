@@ -7,7 +7,26 @@ function ContentHandler (db) {
 
     var posts = new PostsDAO(db);
 
+	//vocabulary special page
+	
+	this.displayVocabulary = function(req,res,next) {
+		"use strict";
+		posts.getPosts(10, function(err, results) {
+            "use strict";
 
+            if (err) return next(err);
+
+            return res.render('blog_template', {
+                title: 'blog homepage',
+                username: req.username,
+                myposts: results
+            });
+        });
+		
+	
+	}
+	
+	
 	//blog main page
     this.displayBlogPage = function(req, res, next) {
         "use strict";
