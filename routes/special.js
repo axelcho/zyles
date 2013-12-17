@@ -7,18 +7,17 @@ function SpecialHandler (db) {
 
 	var vocab = new VocabDAO(db);
 	
-    this.displayVocabularay = function(req, res, next) {
+    this.displayVocabularay = function(res) {
         "use strict";
 		
 		
 	        vocabularay.getByRandom(function(err, results) {
             "use strict";
 
-            if (err) return next(err);
+            if (err) return err;
 
             return res.render('vocabulary', {
-                title: 'Vocabulary',				
-                username: req.username,
+                title: 'Vocabulary',				                
                 item: results
             });
         });
