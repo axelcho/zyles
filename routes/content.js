@@ -19,7 +19,9 @@ function ContentHandler (db) {
             return res.render('vocabulary', {
                 title: 'Vocabulary',				
                 username: req.username,
-                item: results
+                item: results,
+				wiktionary = "http://en.wiktionary.org/wiki/retention" + results.word,
+				dictionary = "http://dictionary.reference.com/browse/" + results.word
             });           
         });
 		
