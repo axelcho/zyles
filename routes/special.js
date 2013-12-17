@@ -1,10 +1,10 @@
-//var VocabDAO = require('../vocab').VocabDAO; // Helper to sanitize form input
+var VocabDAO = require('../vocab').VocabDAO; // Helper to sanitize form input
 
 /* The ContentHandler must be constructed with a connected db */
 function SpecialHandler (db) {
     "use strict";
 
-	//var vocab = new VocabDAO(db);
+	var vocab = new VocabDAO(db);
 	
     this.displayVocabularay = function(req, res, next) {
         "use strict";		
