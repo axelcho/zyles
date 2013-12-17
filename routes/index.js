@@ -1,6 +1,7 @@
 var SessionHandler = require('./session')
   , ContentHandler = require('./content')
-  , PageHandler = require('./page') //static pages
+  , PageHandler = require('./page')  //static pages
+  , SpecialHandler = require('./special')
   , ErrorHandler = require('./error').errorHandler;
 
 module.exports = exports = function(app, db) {
@@ -8,6 +9,7 @@ module.exports = exports = function(app, db) {
     var sessionHandler = new SessionHandler(db);
     var contentHandler = new ContentHandler(db);
 	var pageHandler = new PageHandler(db);
+	var specialHandler = new SpecialHandler(db); 
 
     // Middleware to see if a user is logged in
     app.use(sessionHandler.isLoggedInMiddleware);
@@ -18,6 +20,9 @@ module.exports = exports = function(app, db) {
 	//The blog main page
 	app.get('/blog', contentHandler.displayBlogPage);
 
+	//vocabulary page
+	app.get('/vocabulary', specialHandler.displayVocabulary); 
+	
 	//about page
 	app.get('/page/:page', pageHandler.displayPage);
 	

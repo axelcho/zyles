@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+    Welcome {{username}}
+<p>
+<ul>
+<li>Word: {{results.word}}</li>
+<li>Part: {{results.part}}</li>
+<li>
+Definition:{{results.definition}} 
+</li>
+<li><a href = "/vocab">More</a></li>
+</ul>
+
+
+{% endblock %}
