@@ -11,7 +11,7 @@ function ContentHandler (db) {
 	
 	this.displayVocabulary = function(req,res,next) {
 		"use strict";
-		posts.getPosts(10, function(err, results) {
+		posts.getVocab(function(err, results) {
             "use strict";
 
             if (err) return next(err);
