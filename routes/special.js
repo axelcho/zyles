@@ -8,10 +8,8 @@ function SpecialHandler (db) {
 	var vocab = new VocabDAO(db);
 	
     this.displayVocabularay = function(req, res, next) {
-        "use strict";
-		
-		
-	        vocabularay.getByRandom(function(err, results) {
+        "use strict";		
+	        vocab.getByRandom(function(err, results) {
             "use strict";
 
             if (err) return next(err);
