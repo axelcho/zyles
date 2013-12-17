@@ -20,7 +20,7 @@ function ContentHandler (db) {
                 title: 'Vocabulary',				
                 username: req.username,
                 item: results,
-				wiktionary: "http://en.wiktionary.org/wiki/retention" + results.word,
+				wiktionary: "http://en.wiktionary.org/wiki/" + results.word,
 				dictionary: "http://dictionary.reference.com/browse/" + results.word
             });           
         });
