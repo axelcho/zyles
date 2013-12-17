@@ -9,20 +9,10 @@ function ContentHandler (db) {
 
 	//vocabulary special page
 	
-	this.displayVocabulary = funciton(req,res,next){
+	this.displayVocabulary = function(req,res,next) {
 		"use strict";
 		
-		posts.getPosts(10, function(err, results) {
-            "use strict";
-
-            if (err) return next(err);
-
-            return res.render('blog_template', {
-                title: 'blog homepage',
-                username: req.username,
-                myposts: results
-            });
-        });
+		
 	
 	}
 	
