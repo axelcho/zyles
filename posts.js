@@ -16,12 +16,13 @@ function PostsDAO(db) {
 		console.log("calling vocabulary");
 		var random = Math.floor(Math.random()*5014);
 		
-		vocab.findOne({ '_id' : random }, function(err, vocab) {
+		console.log(random);
+		vocab.findOne({ '_id' : random }, function(err, voc) {
             "use strict";
 
             if (err) return callback(err, null);
-
-            callback(null, vocab);
+        console.log(voc)
+            callback(null, voc);
         });
 	
 	
