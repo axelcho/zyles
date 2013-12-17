@@ -8,6 +8,7 @@ function PostsDAO(db) {
     }
 
     var posts = db.collection("posts");
+	var vocab = db.collections("vocabularay"); 
 
     this.insertEntry = function (title, body, tags, author, callback) {
         "use strict";
