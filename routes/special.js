@@ -8,7 +8,7 @@ function SpecialHandler (db) {
 	
     this.displayVocabularay = function(req, res, next) {
         "use strict";		
-	        vocab.getByRandom(function(err, results) {
+	        vocab.getRandom(function(err, results) {
             "use strict";
 
             if (err) return next(err);
