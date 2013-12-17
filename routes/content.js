@@ -20,8 +20,7 @@ function ContentHandler (db) {
                 title: 'Vocabulary',				
                 username: req.username,
                 item: results
-            });
-            });
+            });           
         });
 		
 	
