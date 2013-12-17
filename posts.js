@@ -14,7 +14,7 @@ function PostsDAO(db) {
 	this.getVocab = function(callback){
 		"use strict";
 		console.log("calling vocabulary");
-		random = Math.floor(Math.random()*5014);
+		var random = Math.floor(Math.random()*5014);
 		
 		vocab.findOne({ '_id' : random }, function(err, vocab) {
             "use strict";
