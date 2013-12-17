@@ -7,6 +7,14 @@ function ContentHandler (db) {
 
     var posts = new PostsDAO(db);
 
+	//vocabulary special page
+	
+	this.displayVocabulary = funciton(req,res,next){
+		"use strict";
+	
+	}
+	
+	
 	//blog main page
     this.displayBlogPage = function(req, res, next) {
         "use strict";
