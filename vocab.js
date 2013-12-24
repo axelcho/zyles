@@ -19,10 +19,15 @@ function VocabDAO(db) {
 	this.getVocab = function(callback){
 		"use strict";		
 		vocab.count(function(err, num){
-			if (err) return callback(err, null);		
-		
-			var random = Math.floor(Math.random()*5014);
-			console.log(random);
+			if (err) return callback(err, null);
+
+			words = new Array();
+			
+			for (var i = 1; i<5; i++){		
+				var random = Math.floor(Math.random()*5014);
+				console.log(random);
+			}
+			
 		
 			vocab.findOne({ '_id' : random }, function(err, voc) {
 				"use strict";
