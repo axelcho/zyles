@@ -13,12 +13,10 @@ function VocabDAO(db) {
 		console.log("calling vocabulary");
 		
 		db.collection("vocabulary").count(function(err, num){
-		if (err) return callback(err, null);
-		console.log(num);
-		number = num; 
-		});
+		if (err) return callback(err, null);		
 		
-		console.log(number);
+		console.log(num); 
+		
 		var random = Math.floor(Math.random()*5014);
 
 		
@@ -31,6 +29,8 @@ function VocabDAO(db) {
         
             callback(null, voc);
         });	
+		
+		});
 	}
 }
 
