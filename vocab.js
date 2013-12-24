@@ -33,10 +33,7 @@ function VocabDAO(db) {
 				{
 				words.push(pick); 
 				}
-			}
-			
-					
-			console.log(words); 
+			}			
 		
 			vocab.find({ '_id' : {$in:words }}).toArray(function(err, voc) {
 				"use strict";
@@ -49,15 +46,18 @@ function VocabDAO(db) {
 				output.word = voc[answer].word;
 				output.part = voc[answer].part;
 				output.answer = answer +1; 
-				
+
+				var definition = new Array();
 				
 				for (var k=1; k<5; k++)
 				{
-					console.log(k); 
-					console.log(voc[k-1].definition);				
+				var def = {"id":k, "meaning":voc[k-1].definition};
+				definition.append(def); 
 				}			
 			
-				//console.log(output);
+				output.definition = definition;
+				
+				console.log(output);
         
 				callback(null, output);
 			});	
