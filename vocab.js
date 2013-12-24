@@ -42,16 +42,15 @@ function VocabDAO(db) {
 		vocab.count(function(err, num){
 			if (err) return callback(err, null);
 
-			for (var i=1; i<5; i++){	
-		
-				var random = Math.floor(Math.random()*num);
-				
-				
-				console.log(random);
+			for (var i=1; i<5; i++){
+			
+				console.log(num);		
+				var rand = Math.floor(Math.random()*num);				
+				console.log(rand);
 			
 			}
 		
-			vocab.findOne({ '_id' : random }, function(err, voc) {
+			vocab.findOne({ '_id' : rand }, function(err, voc) {
 				"use strict";
 
 				if (err) return callback(err, null);
