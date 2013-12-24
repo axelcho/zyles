@@ -15,7 +15,7 @@ function VocabDAO(db) {
 		db.collection("vocabulary").count(function(err, num){
 		if (err) return callback(err, null);
 		console.log(num);
-		var number = num; 
+		number = num; 
 		});
 		
 		console.log(number);
