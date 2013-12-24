@@ -12,8 +12,10 @@ function VocabDAO(db) {
 		"use strict";
 		console.log("calling vocabulary");
 		
-		var number = db.collection("vocabulary").count(function(err, num){
+		db.collection("vocabulary").count(function(err, num){
 		if (err) return callback(err, null);
+		console.log(num);
+		var number = num; 
 		});
 		
 		console.log(number);
