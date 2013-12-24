@@ -40,7 +40,7 @@ function VocabDAO(db) {
 			
 			console.log(words); 
 		
-			vocab.find({ '_id' : {$in:words }}, function(err, voc) {
+			vocab.find({ '_id' : {$in:words }}).toArray(function(err, voc) {
 				"use strict";
 
 				if (err) return callback(err, null);
