@@ -11,7 +11,15 @@ function VocabDAO(db) {
 	this.getVocab = function(callback){
 		"use strict";
 		console.log("calling vocabulary");
-		var random = Math.floor(Math.random()*5014);		
+		
+		db.find().count(function(err, count){
+		if (err) return callback(err, null);
+		console.log(count);
+		}
+		
+		var random = Math.floor(Math.random()*5014);
+
+		
 		db.collection("vocabulary").findOne({ '_id' : random }, function(err, voc) {
             "use strict";
 
