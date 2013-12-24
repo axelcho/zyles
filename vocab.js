@@ -13,10 +13,10 @@ function VocabDAO(db) {
 		vocab.count(function(err, num){
 			if (err) return callback(err, null);		
 		
-			var randomnum = Math.floor(Math.random()*num);
-			console.log(randomnum);
+			var random = Math.floor(Math.random()*num);
+			console.log(random);
 		
-			vocab.findOne({ '_id' : randomnum }, function(err, voc) {
+			vocab.findOne({ '_id' : random }, function(err, voc) {
 				"use strict";
 
 				if (err) return callback(err, null);
