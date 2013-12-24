@@ -52,7 +52,7 @@ function VocabDAO(db) {
 				for (var k=1; k<5; k++)
 				{
 				var def = {"id":k, "meaning":voc[k-1].definition};
-				definition.append(def); 
+				definition.push(def); 
 				}			
 			
 				output.definition = definition;
