@@ -54,10 +54,10 @@ function VocabDAO(db) {
 				for (var k=1; k<output.length + 1; k++)
 				{
 					console.log(k); 
-					console.log(voc[k].definition);				
+					console.log(voc[k-1].definition);				
 				}			
 			
-				console.log(output);
+				//console.log(output);
         
 				callback(null, output);
 			});	
