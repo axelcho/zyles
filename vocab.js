@@ -23,8 +23,8 @@ function VocabDAO(db) {
 
 			var words = new Array();
 			
-			for (var i = 1; i<5; i++){		
-				var pick = Math.floor(Math.random()*5014);
+			for (var i = 0; i<4; i++){		
+				var pick = Math.floor(Math.random()*num);
 				if (inArray(pick, words))
 				{
 				i = i -0;				
@@ -35,15 +35,15 @@ function VocabDAO(db) {
 				}
 			}
 			
-			
-			
-			
+					
 			console.log(words); 
 		
 			vocab.find({ '_id' : {$in:words }}).toArray(function(err, voc) {
 				"use strict";
 
 				if (err) return callback(err, null);
+
+				var answer = Math.floor(Math.random()*4);
 			
 				console.log(voc);
         
