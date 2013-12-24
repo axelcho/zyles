@@ -24,21 +24,23 @@ function VocabDAO(db) {
 			var words = new Array();
 			
 			for (var i = 1; i<5; i++){		
-				var random = Math.floor(Math.random()*5014);
-				if (inArray(random, words))
+				var pick = Math.floor(Math.random()*5014);
+				if (inArray(pick, words))
 				{
 				i = i -0;				
 				}
 				else
 				{
-				words.push(random); 
+				words.push(pick); 
 				}
-				console.log(random);
 			}
+			
+			
+			
 			
 			console.log(words); 
 		
-			vocab.findOne({ '_id' : random }, function(err, voc) {
+			vocab.find({ '_id' : {$in:pick }}, function(err, voc) {
 				"use strict";
 
 				if (err) return callback(err, null);
