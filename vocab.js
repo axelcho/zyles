@@ -12,7 +12,7 @@ function VocabDAO(db) {
 		"use strict";
 		console.log("calling vocabulary");
 		
-		db.find().count(function(err, count){
+		vocab.find().count(function(err, count){
 		if (err) return callback(err, null);
 		console.log(count);
 		});
