@@ -52,7 +52,8 @@ function VocabDAO(db) {
 				var definition = "";
 				for (var k = 1; k< 5; k++)
 				{
-				definition = definition + k + ") " + voc[k].definition + "<br/>";				
+				var newline = k + ") " + voc[k].definition + "<br/>";
+				definition.append(newline);
 				}
 				
 				output.definition = definition;
