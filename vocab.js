@@ -6,17 +6,17 @@ function VocabDAO(db) {
         return new VocabDAO(db);
     }
 
-	var vocab = db.collection("vocabularay"); 	
+	var vocab = db.collection("vocabulary"); 	
 	
 	this.getVocab = function(callback){
 		"use strict";		
-		db.collection("vocabularay").count(function(err, num){
+		vocab.count(function(err, num){
 			if (err) return callback(err, null);		
 		
-			var random = Math.floor(Math.random()*num);
+			var random = Math.floor(Math.random()*5014);
 			console.log(random);
 		
-			db.collection("vocabularay").findOne({ '_id' : random }, function(err, voc) {
+			vocab.findOne({ '_id' : random }, function(err, voc) {
 				"use strict";
 
 				if (err) return callback(err, null);
