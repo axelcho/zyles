@@ -6,23 +6,22 @@ function VocabDAO(db) {
         return new VocabDAO(db);
     }
 
-    var vocabulary = db.collection("vocabulary");
-
-    this.getRandom = function(callback) {
-        "use strict";
-		
-		count = vocabulary.count();
-		
-		random = Math.floor(Math.random()*count);
-
-        vocabulary.findOne({ '_id' : random }, function(err, vocab) {
+	var vocab = db.collection("vocabularay"); 	
+	
+	this.getVocab = function(callback){
+		"use strict";
+		console.log("calling vocabulary");
+		var random = Math.floor(Math.random()*5014);		
+		db.collection("vocabulary").findOne({ '_id' : random }, function(err, voc) {
             "use strict";
 
             if (err) return callback(err, null);
-
-            callback(null, vocab);
-        });
-    }
+			
+			console.log(voc);
+        
+            callback(null, voc);
+        });	
+	}
 }
 
 module.exports.VocabDAO = VocabDAO;
