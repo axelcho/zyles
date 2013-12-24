@@ -48,21 +48,14 @@ function VocabDAO(db) {
 				
 				output.word = voc[answer].word;
 				output.part = voc[answer].part;
-				
-				var def = "";
-				for (var k = 1; k< 5; k++)
-				{
-				var newline = k + ") " + voc[k-1].definition + "<br/>";
-				console.log(newline);
-				
-				def.concat(newline);
-				}
-				console.log(def);
-				
-				output.definition = def;
 				output.answer = answer +1; 
 				
 				
+				for (k=1; k<output.length + 1; k++)
+				{
+					console.log k; 
+					console.log (voc[k].definition);				
+				}			
 			
 				console.log(output);
         
