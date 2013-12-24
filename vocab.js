@@ -21,7 +21,7 @@ function VocabDAO(db) {
 		vocab.count(function(err, num){
 			if (err) return callback(err, null);
 
-			words = new Array();
+			var words = new Array();
 			
 			for (var i = 1; i<5; i++){		
 				var random = Math.floor(Math.random()*5014);
