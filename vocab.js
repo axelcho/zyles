@@ -51,7 +51,7 @@ function VocabDAO(db) {
 				output.answer = answer +1; 
 				
 				
-				for (var k=1; k<output.length + 1; k++)
+				for (var k=1; k<5; k++)
 				{
 					console.log(k); 
 					console.log(voc[k-1].definition);				
