@@ -12,9 +12,9 @@ function VocabDAO(db) {
 		"use strict";
 		console.log("calling vocabulary");
 		
-		vocab.find().count(function(err, count){
+		db.collection("vocabulary").count(function(err, num){
 		if (err) return callback(err, null);
-		console.log(count);
+		console.log(num);
 		});
 		
 		var random = Math.floor(Math.random()*5014);
