@@ -25,9 +25,18 @@ function VocabDAO(db) {
 			
 			for (var i = 1; i<5; i++){		
 				var random = Math.floor(Math.random()*5014);
+				if (inArray(random, words))
+				{
+				i = i -0;				
+				}
+				else
+				{
+				words.push(random); 
+				}
 				console.log(random);
 			}
 			
+			console.log(words); 
 		
 			vocab.findOne({ '_id' : random }, function(err, voc) {
 				"use strict";
