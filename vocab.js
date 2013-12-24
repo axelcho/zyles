@@ -42,7 +42,7 @@ function VocabDAO(db) {
 		vocab.count(function(err, num){
 			if (err) return callback(err, null);
 
-			for (i=1; i<5; i++){	
+			for (var i=1; i<5; i++){	
 		
 				var random = Math.floor(Math.random()*num);
 				
