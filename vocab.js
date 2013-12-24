@@ -13,7 +13,7 @@ function VocabDAO(db) {
 		vocab.count(function(err, num){
 			if (err) return callback(err, null);		
 		
-			var random = Math.floor(Math.random()*num);
+			var random = Math.floor(Math.random()* 5014);
 			console.log(random);
 		
 			vocab.findOne({ '_id' : random }, function(err, voc) {
