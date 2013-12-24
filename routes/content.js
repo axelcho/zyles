@@ -5,29 +5,7 @@ var PostsDAO = require('../posts').PostsDAO
 function ContentHandler (db) {
     "use strict";
 
-    var posts = new PostsDAO(db);
-
-	//vocabulary special page
-	
-	this.displayVocabulary = function(req,res,next) {
-		"use strict";
-		posts.getVocab(function(err, results) {
-            "use strict";
-
-            if (err) return next(err);
-
-            return res.render('vocabulary', {
-                title: 'Vocabulary',				
-                username: req.username,
-                item: results,
-				wiktionary: "http://en.wiktionary.org/wiki/" + results.word,
-				dictionary: "http://dictionary.reference.com/browse/" + results.word
-            });           
-        });
-		
-	
-	}
-	
+    var posts = new PostsDAO(db);	
 	
 	//blog main page
     this.displayBlogPage = function(req, res, next) {
