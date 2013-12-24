@@ -12,7 +12,7 @@
 <p>
 <ol>
 {% for def in item.definition %}
-<li><input type = 'radio' id = {def.id}> {{def.meaning}}</li>
+<li><input type = 'radio' id = {{def.id}}> {{def.meaning}}</li>
 {% endfor %}
 </ol>
 <script type = 'text/javascript'>
