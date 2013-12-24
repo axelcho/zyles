@@ -2,17 +2,37 @@
 {% block content %}
     Welcome {{username}}, this is an SAT Vocabulary Builder page running on MongoDB and node.js. Enjoy!
 
+	
+	
+	
 <div class = "row">	
 <div class ="col-xs-12 col-sm-6 col-md-8">	
 <p class = 'lead'>
  <h1>{{item.word}} <small>{{item.part}}</small></h1>
 <p>
-
+<ol>
 {% for def in item.definition %}
-
-{{def.id}}) {{def.meaning}}<br/>
+<li><input type = 'radio' id = {def.id}> {{def.meaning}}</li>
 {% endfor %}
+</ol>
+<script type = 'text/javascript'>
+for(var click = 1; click < 5; click ++)
+{
+if (click == {{item.answer}})
+{
+$(click).click(function{
+alert ("You are right");
+});
+}
+else
+{
+$(click).click(function{
+alert ("Wrong, try again");
+});
+}
+}
 
+</script>
 </p>
 </p>
 <p>
