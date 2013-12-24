@@ -15,7 +15,7 @@ function VocabDAO(db) {
 		db.find().count(function(err, count){
 		if (err) return callback(err, null);
 		console.log(count);
-		}
+		});
 		
 		var random = Math.floor(Math.random()*5014);
 
