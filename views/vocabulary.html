@@ -16,22 +16,19 @@
 {% endfor %}
 </ol>
 <script type = 'text/javascript'>
-for(var click = 1; click < 5; click ++)
+$("input").click(function(){
+if ($(this).attr('id') == {{item.answer}})
 {
-if (click == {{item.answer}})
-{
-$(click).click(function() {
-alert ("You are right");
-});
-}
-else
-{
-$(click).click(function() {
-alert ("Wrong, try again");
-});
-}
+alert("You are right");
 }
 
+else
+{
+alert("Wrong, try again");
+}
+
+
+});
 </script>
 </p>
 </p>
