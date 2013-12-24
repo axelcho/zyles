@@ -42,12 +42,27 @@ function VocabDAO(db) {
 				"use strict";
 
 				if (err) return callback(err, null);
-
+				
+				var output = {}
 				var answer = Math.floor(Math.random()*4);
+				
+				output.word = voc[answer].word;
+				output.part = voc[answer].part;
+				
+				var definition = "";
+				for (var k = 0; k< 4; k++)
+				{
+				definition = k + ") " + voc[k].definition + "<br/>";				
+				}
+				
+				output.definition = definition;
+				output.answer = answer; 
+				
+				
 			
-				console.log(voc);
+				console.log(output);
         
-				callback(null, voc);
+				callback(null, output);
 			});	
 		
 		});
