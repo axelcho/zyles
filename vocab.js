@@ -50,9 +50,9 @@ function VocabDAO(db) {
 				output.part = voc[answer].part;
 				
 				var definition = "";
-				for (var k = 0; k< 4; k++)
+				for (var k = 1; k< 5; k++)
 				{
-				definition = k + ") " + voc[k].definition + "<br/>";				
+				definition = definition + k + ") " + voc[k].definition + "<br/>";				
 				}
 				
 				output.definition = definition;
