@@ -65,8 +65,20 @@ function VocabDAO(db) {
 		});
 	}
 	
+	this.putVocab = function(word, part, definition, callback){
+		"use strict";
+		
+		var newword = {"word": word,
+					"part": part,
+					"definition": definition}
+					
 	
-	
+		db.collection('vocabulary').insert(newword, function(err, inserted)
+		{
+			if (err) callback (err, null);
+			callback (null, inserted); 
+		}	
+	}	
 	
 }
 

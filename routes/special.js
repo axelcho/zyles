@@ -30,6 +30,20 @@ function SpecialHandler (db) {
 	
 	}
 
+	this.displayAddVocab = function(req, res, next) {
+		"use strict";
+		
+		var word = req.body.word
+		var part = req.body.part
+		var definition = req.body.definition
+		
+		voc.putVocab(word, part, definition, function(err, word){
+			"use strict";
+			if (err) return next(err);
+			return res.redirect("/vocabulary/" + word)
+		});
+	
+	}
 }
 
 module.exports = SpecialHandler;
