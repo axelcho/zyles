@@ -77,7 +77,7 @@ function VocabDAO(db) {
 		{
 			if (err) callback (err, null);
 			callback (null, inserted); 
-		}	
+		});	
 	}	
 	
 }
