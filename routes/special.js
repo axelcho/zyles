@@ -22,6 +22,7 @@ function SpecialHandler (db) {
                 title: 'Vocabulary',				
                 username: req.username,
                 item: results,
+				word: results.word,
 				wiktionary: "http://en.wiktionary.org/wiki/" + results.word,
 				dictionary: "http://dictionary.reference.com/browse/" + results.word
             });           
