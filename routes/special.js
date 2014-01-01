@@ -50,7 +50,7 @@ function SpecialHandler (db) {
 		
 		if (!req.username || req.username != "Seong") return res.redirect("/vocabulary");
 		
-		return res.render('addvocab_template' {
+		return res.render('addvocab_template', {
 			word: "",
 			part: "",
 			definition: ""
