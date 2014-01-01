@@ -101,7 +101,7 @@ function VocabDAO(db) {
 				output.part = "undefined";
 				output.definition = ["The word " + needle + " is not defined in the database."];
 
-				console.log(output);
+				
 				}
 				
 				
@@ -123,7 +123,7 @@ function VocabDAO(db) {
 				}			
 				output.definition = definition;
 				}
-				
+				console.log(output);
 				callback(null, output);
 			});	
 		
