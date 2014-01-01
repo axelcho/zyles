@@ -33,8 +33,8 @@ function SpecialHandler (db) {
 	
 	this.DisplaySingleVocabulary = function(req,res,next) {
 		"use strict";
-		var word = req.params.vocab;
-		voc.getVocabSingle(word, function(err, results) {
+		var vocab = req.params.vocab;
+		voc.getVocabSingle(vocab, function(err, results) {
             "use strict";
 
             if (err) return next(err);
@@ -43,11 +43,10 @@ function SpecialHandler (db) {
                 title: 'Vocabulary',				
                 username: req.username,
                 item: results,
-				word: word
+				word: vocab
 				
             });           
         });
-		
 	
 	}
 

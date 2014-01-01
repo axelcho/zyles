@@ -24,7 +24,7 @@ module.exports = exports = function(app, db) {
 	app.get('/vocabulary', specialHandler.displayVocabulary); 
 	app.get('/addvocab', specialHandler.displayAddVocab);
 	app.post('/addvocab', specialHandler.addVocabulary);
-	app.get('/findvocab/:vocab', specialHandler.displaySingleVocabulary);
+	app.get('/findvocab/:vocab', specialHandler.DisplaySingleVocabulary);
 	
 	//about page
 	app.get('/page/:page', pageHandler.displayPage);
