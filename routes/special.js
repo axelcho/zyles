@@ -77,6 +77,27 @@ function SpecialHandler (db) {
 			});
 	
 	}
+	
+	this.displayAddGrammar = function(req, res, next){
+		"use strict";
+		
+		if (!req.username || req.username != "Seong") return res.redirect("/vocabulary");
+		
+		return res.render('addgrammar_template', {
+		sentence: "",
+		AC: "",
+		AW: "",
+		BC: "",
+		BW: "",
+		CC: "",
+		CW: "",
+		DC: "",
+		DW: ""		
+		});	
+	}
+	
+	
+	
 }
 
 module.exports = SpecialHandler;

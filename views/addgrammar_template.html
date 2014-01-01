@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<form action="/addvocab" method="POST">
+{{errors}}
+<h2>Sentence</h2>
+<textarea name="sentence" cols="120" rows="20">{{sentence}}</textarea><br>
+<h2>Part<h2>
+<h3>A</h3>
+Right: <input type = 'text' name = 'AC' value = {{AC}}> Wrong: <input type = 'text' name = 'AW' value = {{AW}}><br/>
+
+<h3>B</h3>
+Right: <input type = 'text' name = 'BC' value = {{BC}}> Wrong: <input type = 'text' name = 'BW' value = {{BW}}><br/>
+
+<h3>C</h3>
+Right: <input type = 'text' name = 'CC' value = {{CC}}> Wrong: <input type = 'text' name = 'CW' value = {{CW}}><br/>
+
+<h3>D</h3>
+Right: <input type = 'text' name = 'DC' value = {{DC}}> Wrong: <input type = 'text' name = 'DW' value = {{DW}}><br/>
+
+
+<p>
+<input type="submit" value="Submit">
+</p>
+{% endblock %}
+
