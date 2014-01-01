@@ -156,7 +156,7 @@ function VocabDAO(db) {
 					"B": {"right": BC, "wrong":BW},
 					"C": {"right": CC, "wrong":CW},					
 					"D": {"right": DC, "wrong":DW}
-					}
+					};
 					
 	
 		db.collection('grammar').insert(newitem, function(err, inserted)
