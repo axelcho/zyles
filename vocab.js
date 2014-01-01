@@ -56,8 +56,9 @@ function VocabDAO(db) {
 				}			
 			
 				output.definition = definition;
+				output.found = "yes";
 				
-				console.log(output);
+
         
 				callback(null, output);
 			});	
@@ -100,6 +101,7 @@ function VocabDAO(db) {
 				output.word = needle;
 				output.part = "undefined";
 				output.definition = [{"id": 1, "meaning": "The word " + needle + " is not defined in the database."}];
+				output.notfound = "yes"
 
 				
 				}
@@ -122,6 +124,7 @@ function VocabDAO(db) {
 					definition.push(def);					
 				}			
 				output.definition = definition;
+				output.found = "yes";
 				}
 				
 				callback(null, output);
