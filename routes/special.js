@@ -30,7 +30,7 @@ function SpecialHandler (db) {
 	
 	}
 
-	this.displayAddVocab = function(req, res, next) {
+	this.addVocabulary = function(req, res, next) {
 		"use strict";
 		
 		var word = req.body.word
@@ -42,6 +42,19 @@ function SpecialHandler (db) {
 			if (err) return next(err);
 			return res.redirect("/vocabulary/" + word)
 		});
+	
+	}
+	
+	this.displayAddVocab = function(req, res, next) {
+		"use strict";
+		
+		if (!req.username || req.username != "Seong") return res.redirect("/vocabulary");
+		
+		return res.render('addvocab_template' {
+			word: "",
+			part: "",
+			definition: ""
+			});
 	
 	}
 }

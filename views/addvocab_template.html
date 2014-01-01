@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<form action="/addvocab" method="POST">
+{{errors}}
+<h2>Word</h2>
+<input type="text" name="word" size="120" value="{{word}}"><br>
+<h2>Part<h2>
+<select name = "part">
+<option value = "">Select Part of Speech</option>
+<option value = "n.">noun(n.)</option>
+<option value = "v.">verb(v.)</option>
+<option value = "adj.">adjective(adj.)</option>
+<option value = "adv.">adverb(adv.)</option>
+<option value = "prep.">preposition(prep.)</option>
+</select>
+<h2>Definition</h2>
+<textarea name="definition" cols="120" rows="20">{{definition}}</textarea><br>
+<p>
+<input type="submit" value="Submit">
+
+{% endblock %}
+
