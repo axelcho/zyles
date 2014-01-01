@@ -85,7 +85,7 @@ function VocabDAO(db) {
 				}
 			}			
 		
-			vocab.find({$or: [{'word': needle},  {'_id' : {$in:words }}]}).toArray(function(err, voc) {
+			vocab.find({'$or': [{'word': needle},  {'_id' : {'$in':words }}]}).toArray(function(err, voc) {
 				"use strict";
 
 				if (err) return callback(err, null);
