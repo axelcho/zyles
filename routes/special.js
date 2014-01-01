@@ -29,6 +29,27 @@ function SpecialHandler (db) {
 		
 	
 	}
+	
+	
+	this.DisplaySingleVocabulary = function(req,res,next) {
+		"use strict";
+		var word = req.params.vocab;
+		voc.getVocabSingle(word, function(err, results) {
+            "use strict";
+
+            if (err) return next(err);
+
+            return res.render('vocabulary', {
+                title: 'Vocabulary',				
+                username: req.username,
+                item: results,
+				word: word
+				
+            });           
+        });
+		
+	
+	}
 
 	this.addVocabulary = function(req, res, next) {
 		"use strict";
@@ -40,7 +61,7 @@ function SpecialHandler (db) {
 		voc.putVocab(word, part, definition, function(err, word){
 			"use strict";
 			if (err) return next(err);
-			return res.redirect("/vocabulary/" + word)
+			return res.redirect("/findvocab/" + word)
 		});
 	
 	}

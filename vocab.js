@@ -65,6 +65,55 @@ function VocabDAO(db) {
 		});
 	}
 	
+	this.getVocabSingle = function(word, callback){
+		"use strict";		
+		vocab.count(function(err, num){
+			if (err) return callback(err, null);
+
+			var words = new Array();
+			
+			for (var i = 0; i<3; i++){		
+				var pick = Math.floor(Math.random()*num);
+				if (inArray(pick, words))
+				{
+				i = i -0;				
+				}
+				else
+				{
+				words.push(pick); 
+				}
+			}			
+		
+			vocab.find({$or: ['word': word,  '_id' : {$in:words }]}).toArray(function(err, voc) {
+				"use strict";
+
+				if (err) return callback(err, null);
+				
+				var output = {}
+				var answer = 0; 
+				
+				output.word = voc[answer].word;
+				output.part = voc[answer].part;
+				output.answer = answer +1; 
+
+				var definition = new Array();
+				
+				for (var k=1; k<5; k++)
+				{
+				var def = {"id":k, "meaning":voc[k-1].definition};
+				definition.push(def); 
+				}			
+			
+				output.definition = definition;
+				
+				console.log(output);
+        
+				callback(null, output);
+			});	
+		
+		});
+	}
+	
 	this.putVocab = function(word, part, definition, callback){
 		"use strict";
 		
