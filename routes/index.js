@@ -28,6 +28,7 @@ module.exports = exports = function(app, db) {
 	
 	//grammar pages
 	app.get('/addgrammar', specialHandler.displayAddGrammar);
+	app.post('/addgrammar', specialHandler.addGrammar);
 	
 	//about page
 	app.get('/page/:page', pageHandler.displayPage);

@@ -148,6 +148,26 @@ function VocabDAO(db) {
 		});	
 	}	
 	
+	this.putGrammar = function(sentence, AC, AW, BC, BW, CC, CW, DC, DW, callback){
+		"use strict";
+		
+		var newitem = {"sentence": sentence,
+					"A": {"right": AC, "wrong":AW},
+					"B": {"right": BC, "wrong":BW},
+					"C": {"right": CC, "wrong":CW},					
+					"D": {"right": DC, "wrong":DW}
+					}
+					
+	
+		db.collection('grammar').insert(newitem, function(err, inserted)
+		{
+			if (err) callback (err, null);
+			callback (null, inserted); 
+		});	
+	}
+	
+	
+	
 }
 
 module.exports.VocabDAO = VocabDAO;

@@ -78,6 +78,29 @@ function SpecialHandler (db) {
 	
 	}
 	
+	this.addGrammar = function(req, res, next) {
+		"use strict";
+		
+		var sentence = req.body.sentence
+		var AC = req.body.AC
+		var AW = req.body.AW
+		var BC = req.body.BC
+		var BW = req.body.BW
+		var CC = req.body.CC
+		var CW = req.body.CW
+		var DC = req.body.DC
+		var DW = req.body.DW
+		
+		
+		voc.putGrammar(sentence, AC, AW, BC, BW, CC, CW, DC, DW, function(err, word){
+			"use strict";
+			if (err) return next(err);
+			return res.redirect("/vocabulary")
+		});
+	
+	}
+	
+	
 	this.displayAddGrammar = function(req, res, next){
 		"use strict";
 		
