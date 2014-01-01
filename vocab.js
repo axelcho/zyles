@@ -99,7 +99,9 @@ function VocabDAO(db) {
 				output.answer = 1;
 				output.word = needle;
 				output.part = "undefined";
-				output.definition = ["The word " + needle + " is not defined in the database."];				
+				output.definition = ["The word " + needle + " is not defined in the database."];
+
+				console.log(output);
 				}
 				
 				
