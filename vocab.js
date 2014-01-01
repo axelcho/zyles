@@ -83,36 +83,24 @@ function VocabDAO(db) {
 				{
 				words.push(pick); 
 				}
-			}			
-		
-			vocab.find({'$or': [{'word': needle},  {'_id' : {'$in':words }}]}).toArray(function(err, voc) {
-				"use strict";
+			}
 
+
+			vocab.findOne({'word':needle}, function(err, found) {
+			
 				if (err) return callback(err, null);
 				
-				var output = {}
-				var answer = 0; 
-				
-				console.log(voc);
-				
-				
-				output.word = voc[answer].word;
-				output.part = voc[answer].part;
-				output.answer = answer +1; 
-				
-				
-
-				var definition = new Array();
-				
-				for (var k=1; k<5; k++)
-				{
-				var def = {"id":k, "meaning":voc[k-1].definition};
-				definition.push(def); 
-				}			
+				console.log(found); 	
 			
-				output.definition = definition;        
-				callback(null, output);
-			});	
+			
+			
+			
+			
+			});
+
+			
+		
+			
 		
 		});
 	}
