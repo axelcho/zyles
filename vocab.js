@@ -84,7 +84,8 @@ function VocabDAO(db) {
 				words.push(pick); 
 				}
 			}
-
+			
+			console.log(needle);
 
 			vocab.findOne({'word':needle}, function(err, found) {
 			
