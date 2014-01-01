@@ -66,9 +66,7 @@ function VocabDAO(db) {
 	}
 	
 	this.getVocabSingle = function(needle, callback){
-		"use strict";
-
-		console.log(needle);
+		"use strict";		
 		
 		vocab.count(function(err, num){
 			if (err) return callback(err, null);
@@ -95,11 +93,14 @@ function VocabDAO(db) {
 				var output = {}
 				var answer = 0; 
 				
+				console.log(voc);
+				
+				
 				output.word = voc[answer].word;
 				output.part = voc[answer].part;
 				output.answer = answer +1; 
 				
-				console.log(voc);
+				
 
 				var definition = new Array();
 				
