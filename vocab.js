@@ -95,6 +95,8 @@ function VocabDAO(db) {
 				output.word = voc[answer].word;
 				output.part = voc[answer].part;
 				output.answer = answer +1; 
+				
+				console.log(voc);
 
 				var definition = new Array();
 				
@@ -104,10 +106,7 @@ function VocabDAO(db) {
 				definition.push(def); 
 				}			
 			
-				output.definition = definition;
-				
-				console.log(output);
-        
+				output.definition = definition;        
 				callback(null, output);
 			});	
 		
