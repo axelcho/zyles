@@ -90,27 +90,38 @@ function VocabDAO(db) {
 
 				if (err) return callback(err, null);
 				
+				
+				var answer = 0;
 				var output = {}
-				var answer = 0; 
-				
-				console.log(voc);
-				
-				
-				output.word = voc[answer].word;
-				output.part = voc[answer].part;
-				output.answer = answer +1; 
-				
-				
-
 				var definition = new Array();
 				
-				for (var k=1; k<5; k++)
+				if (voc.length < 4){
+				output.answer = 1;
+				output.word = needle;
+				output.part = "undefined";
+				output.definition = ["The word " + needle + " is not defined in the database."];				
+				}
+				
+				
+				
+				else
+				
 				{
-				var def = {"id":k, "meaning":voc[k-1].definition};
-				definition.push(def); 
+				
+				
+				for (var k =0; k < 4; k++){				
+				
+					if (voc[k].word == needle) {
+						output.answer = k+1;
+						output.word = voc[k].word;
+						output.part = voc[k].part;					
+						}
+					var def = {"id":k+1, "meaning": voc[k].definition};
+					definition.push(def);					
 				}			
-			
-				output.definition = definition;        
+				output.definition = definition;
+				}
+				
 				callback(null, output);
 			});	
 		
