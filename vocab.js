@@ -65,8 +65,11 @@ function VocabDAO(db) {
 		});
 	}
 	
-	this.getVocabSingle = function(word, callback){
-		"use strict";		
+	this.getVocabSingle = function(needle, callback){
+		"use strict";
+
+		console.log(needle);
+		
 		vocab.count(function(err, num){
 			if (err) return callback(err, null);
 
@@ -84,7 +87,7 @@ function VocabDAO(db) {
 				}
 			}			
 		
-			vocab.find({$or: [{'word': word},  {'_id' : {$in:words }}]}).toArray(function(err, voc) {
+			vocab.find({$or: [{'word': needle},  {'_id' : {$in:words }}]}).toArray(function(err, voc) {
 				"use strict";
 
 				if (err) return callback(err, null);
