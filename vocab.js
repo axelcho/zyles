@@ -208,7 +208,7 @@ function VocabDAO(db) {
 				}
 				else
 				{
-					console.log(gram.chr.right); 
+					//console.log(gram.chr.right); 
 				}
 			
 			}
