@@ -214,7 +214,7 @@ function VocabDAO(db) {
 				if (i == answer)
 				{
 				
-				sentence.replace(replacer, gram[chr].wrong);
+				sentence = sentence.replace(replacer, gram[chr].wrong);
 				
 				//	console.log("wrong: " + chr);
 				//	console.log(gram[chr].wrong);
@@ -224,7 +224,7 @@ function VocabDAO(db) {
 				//	console.log("right: " + chr); 
 				//	console.log(gram[chr].right);
 				
-				sentence.replace(replacer, gram[chr].right);
+				sentence = sentence.replace(replacer, gram[chr].right);
 				}
 			
 			
