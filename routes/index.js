@@ -27,6 +27,7 @@ module.exports = exports = function(app, db) {
 	app.get('/findvocab/:vocab', specialHandler.DisplaySingleVocabulary);
 	
 	//grammar pages
+	app.get('/grammar', specialHandler.displayGrammar);
 	app.get('/addgrammar', specialHandler.displayAddGrammar);
 	app.post('/addgrammar', specialHandler.addGrammar);
 	

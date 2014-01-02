@@ -30,6 +30,24 @@ function SpecialHandler (db) {
 	
 	}
 	
+	this.displayGrammar = function(req,res,next) {
+		"use strict";
+		voc.getGrammar(function(err, results) {
+            "use strict";
+
+            if (err) return next(err);
+
+            return res.render('grammar', {
+                title: 'Grammar',				
+                username: req.username,
+                sentence: sentence
+				answer: answer				
+            });           
+        });
+		
+	
+	}
+	
 	
 	this.DisplaySingleVocabulary = function(req,res,next) {
 		"use strict";

@@ -180,6 +180,25 @@ function VocabDAO(db) {
 		});
 	}
 	
+	this.getGrammar = function(callback){
+		"use strict";		
+		db.collection('grammar').count(function(err, num){
+			if (err) return callback(err, null);
+			
+			var pick = Math.floor(Math.random()*num);			
+			
+			
+			var list = array("A", "B", "C", "D", "E");
+			
+			var answer = Math.floor(Math.random()*5);
+
+			for (var i = 0; i < 4; i++)
+			{			
+			var chr = String.fromCharCode(65 + i);			
+			console.log(chr);
+			}
+		});
+	}
 	
 	
 }

@@ -53,4 +53,13 @@ padding-left: 20px;
 padding-right: 20px;
 }
 
+span.labeled {
+    display: inline-block;
+    vertical-align: top;
+}
+span.labeled span.label {
+    display: block;
+    text-align: center;
+    border-top: 1px solid black;
+} 
 
