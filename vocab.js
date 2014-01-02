@@ -207,6 +207,10 @@ function VocabDAO(db) {
 			for (var i = 0; i < 4; i++)
 			{			
 				var chr = String.fromCharCode(65 + i);
+				var replacer = "(" + chr + ")";
+				console.log(replacer);
+				
+				
 				if (i == answer)
 				{
 				
@@ -223,7 +227,7 @@ function VocabDAO(db) {
 				sentence.replace("("+chr + ")", gram[chr].right);
 				}
 			
-			console.log(sentence); 
+			//console.log(sentence); 
 			}
 			
 			callback(null, output); 
