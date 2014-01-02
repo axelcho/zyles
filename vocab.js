@@ -192,14 +192,24 @@ function VocabDAO(db) {
 			
 			if (err) return callback(err, null); 
 			
-			console.log(gram.sentence); 
-			console.log(gram.A.right);
+			//console.log(gram.sentence); 
+			//console.log(gram.A.right);
 						
 			var answer = Math.floor(Math.random()*5);			
 			
+			console.log(answer);
+			
 			for (var i = 0; i < 4; i++)
 			{			
-				var chr = String.fromCharCode(65 + i);			
+				var chr = String.fromCharCode(65 + i);
+				if (i == answer)
+				{
+					console.log(gram.chr.wrong);
+				}
+				else
+				{
+					console.log(gram.chr.right); 
+				}
 			
 			}
 			
