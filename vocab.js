@@ -195,42 +195,31 @@ function VocabDAO(db) {
 			var output = {}; 
 			
 			var sentence = gram.sentence; 
-			
-			
-			//console.log(gram.sentence); 
-			//console.log(gram.A.right);
 						
-			var answer = Math.floor(Math.random()*5);			
-			
-			//console.log(answer);
+			var answer = Math.floor(Math.random()*5);
 			
 			for (var i = 0; i < 4; i++)
 			{			
 				var chr = String.fromCharCode(65 + i);
-				var replacer = "(" + chr + ")";
-			//	console.log(replacer);
+				var label = "(" + chr + ")";
 				
 				
 				if (i == answer)
-				{
-				
-				sentence = sentence.replace(replacer, gram[chr].wrong);
-				
-				//	console.log("wrong: " + chr);
-				//	console.log(gram[chr].wrong);
+				{				
+				replacer = gram[chr].wrong;
+				output.answer = chr; 
 				}
+				
 				else
-				{
-				//	console.log("right: " + chr); 
-				//	console.log(gram[chr].right);
-				
-				sentence = sentence.replace(replacer, gram[chr].right);
-				}
+				{				
+				replacer = gram[chr].right;				
+				}			
+			styled = "<span class='labeled'>" + replacer + "<span class='label'>" + label + "</span></span>"; 
 			
-			
+			output.sentence = sentence.replace(label, styled);			
 			}
 			
-			console.log(sentence); 
+			console.log(output); 
 			
 			callback(null, output); 
 			
