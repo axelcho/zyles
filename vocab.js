@@ -185,12 +185,11 @@ function VocabDAO(db) {
 		db.collection('grammar').count(function(err, num){
 			if (err) return callback(err, null);
 			
-			var pick = Math.floor(Math.random()*num);			
-			
-			
-			var list = new Array("A", "B", "C", "D", "E");
-			
+			var pick = Math.floor(Math.random()*num);						
+						
 			var answer = Math.floor(Math.random()*5);
+			
+			console.log(answer); 
 
 			for (var i = 0; i < 4; i++)
 			{			
