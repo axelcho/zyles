@@ -206,13 +206,13 @@ function VocabDAO(db) {
 				
 				if (i == answer)
 				{				
-				replacer = gram[chr].wrong;
+				var replacer = gram[chr].wrong;
 				output.answer = chr; 
 				}
 				
 				else
 				{				
-				replacer = gram[chr].right;				
+				var replacer = gram[chr].right;				
 				}			
 			styled = "<span class='labeled'>" + replacer + "<span class='label'>" + label + "</span></span>"; 
 			
