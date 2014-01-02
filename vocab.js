@@ -208,13 +208,13 @@ function VocabDAO(db) {
 			{			
 				var chr = String.fromCharCode(65 + i);
 				var replacer = "(" + chr + ")";
-				console.log(replacer);
+			//	console.log(replacer);
 				
 				
 				if (i == answer)
 				{
 				
-				sentence.replace("("+chr + ")", gram[chr].wrong);
+				sentence.replace(replacer, gram[chr].wrong);
 				
 				//	console.log("wrong: " + chr);
 				//	console.log(gram[chr].wrong);
@@ -224,11 +224,13 @@ function VocabDAO(db) {
 				//	console.log("right: " + chr); 
 				//	console.log(gram[chr].right);
 				
-				sentence.replace("("+chr + ")", gram[chr].right);
+				sentence.replace(replacer, gram[chr].right);
 				}
 			
-			//console.log(sentence); 
+			
 			}
+			
+			console.log(sentence); 
 			
 			callback(null, output); 
 			
