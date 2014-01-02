@@ -40,8 +40,8 @@ function SpecialHandler (db) {
             return res.render('grammar', {
                 title: 'Grammar',				
                 username: req.username,
-                sentence: sentence
-				answer: answer				
+				item: results
+   			
             });           
         });
 		
