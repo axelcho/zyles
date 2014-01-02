@@ -188,7 +188,7 @@ function VocabDAO(db) {
 			var pick = Math.floor(Math.random()*num);			
 			
 			
-			var list = array("A", "B", "C", "D", "E");
+			var list = new Array("A", "B", "C", "D", "E");
 			
 			var answer = Math.floor(Math.random()*5);
 
