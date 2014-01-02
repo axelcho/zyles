@@ -204,11 +204,11 @@ function VocabDAO(db) {
 				var chr = String.fromCharCode(65 + i);
 				if (i == answer)
 				{
-					console.log(gram.chr.wrong);
+					console.log("wrong: " + chr);
 				}
 				else
 				{
-					//console.log(gram.chr.right); 
+					console.log("right: " + chr); 
 				}
 			
 			}
