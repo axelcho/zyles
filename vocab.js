@@ -219,16 +219,12 @@ function VocabDAO(db) {
 			sentence = sentence.replace(label, styled);			
 			}
 			
+			sentence = sentence + " <span class = 'labeled'>No error<span class = 'label'>E</span></span>"; 
+			
 			output.sentence = sentence; 
-			
-			console.log(output); 
-			
-			callback(null, output); 
-			
+		
+			callback(null, output); 			
 			});
-			
-			
-			
 		});
 	}
 	
