@@ -193,6 +193,7 @@ function VocabDAO(db) {
 			if (err) return callback(err, null); 
 			
 			console.log(gram.sentence); 
+			console.log(gram.A.right);
 						
 			var answer = Math.floor(Math.random()*5);			
 			
