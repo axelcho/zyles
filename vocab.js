@@ -136,16 +136,22 @@ function VocabDAO(db) {
 	this.putVocab = function(word, part, definition, callback){
 		"use strict";
 		
-		var newword = {"word": word,
+			db.collection('vocabulary').count(function(err, num){
+			
+			if (err) callback (err, null);
+		
+			var newword = {"_id": num, 
+					"word": word,
 					"part": part,
 					"definition": definition}
 					
 	
-		db.collection('vocabulary').insert(newword, function(err, inserted)
-		{
+			db.collection('vocabulary').insert(newword, function(err, inserted)
+			{
 			if (err) callback (err, null);
 			callback (null, inserted); 
-		});	
+			});	
+		});
 	}	
 	
 	this.putGrammar = function(sentence, AC, AW, BC, BW, CC, CW, DC, DW, callback){
