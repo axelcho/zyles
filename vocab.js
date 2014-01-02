@@ -214,7 +214,7 @@ function VocabDAO(db) {
 				{				
 				var replacer = gram[chr].right;				
 				}			
-			styled = "<span class='labeled'>" + replacer + "<span class='label'>" + label + "</span></span>"; 
+			var styled = "<span class='labeled'>" + replacer + "<span class='label'>" + label + "</span></span>"; 
 			
 			output.sentence = sentence.replace(label, styled);			
 			}
