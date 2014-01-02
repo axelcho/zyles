@@ -192,28 +192,41 @@ function VocabDAO(db) {
 			
 			if (err) return callback(err, null); 
 			
+			var output = {}; 
+			
+			var sentence = gram.sentence; 
+			
+			
 			//console.log(gram.sentence); 
 			//console.log(gram.A.right);
 						
 			var answer = Math.floor(Math.random()*5);			
 			
-			console.log(answer);
+			//console.log(answer);
 			
 			for (var i = 0; i < 4; i++)
 			{			
 				var chr = String.fromCharCode(65 + i);
 				if (i == answer)
 				{
-					console.log("wrong: " + chr);
-					console.log(gram[chr].wrong);
+				
+				sentence.replace("("+chr + ")", gram[chr].wrong);
+				
+				//	console.log("wrong: " + chr);
+				//	console.log(gram[chr].wrong);
 				}
 				else
 				{
-					console.log("right: " + chr); 
-					console.log(gram[chr].right);
+				//	console.log("right: " + chr); 
+				//	console.log(gram[chr].right);
+				
+				sentence.replace("("+chr + ")", gram[chr].right);
 				}
 			
+			console.log(sentence); 
 			}
+			
+			callback(null, output); 
 			
 			});
 			
