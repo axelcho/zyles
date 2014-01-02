@@ -216,8 +216,10 @@ function VocabDAO(db) {
 				}			
 			var styled = "<span class='labeled'>" + replacer + "<span class='label'>" + label + "</span></span>"; 
 			
-			output.sentence = sentence.replace(label, styled);			
+			sentence = sentence.replace(label, styled);			
 			}
+			
+			output.sentence = sentence; 
 			
 			console.log(output); 
 			
