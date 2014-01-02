@@ -205,10 +205,12 @@ function VocabDAO(db) {
 				if (i == answer)
 				{
 					console.log("wrong: " + chr);
+					console.log(gram[chr]);
 				}
 				else
 				{
 					console.log("right: " + chr); 
+					console.log(gram[chr]);
 				}
 			
 			}
