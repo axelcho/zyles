@@ -216,7 +216,7 @@ function VocabDAO(db) {
 				}
 				
 			output[chr] = replacer; 
-			
+			}
 			
 			var Asplice = sentence.split("(A)");
 			output.preA = Asplice[0];
