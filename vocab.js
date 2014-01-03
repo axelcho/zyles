@@ -207,7 +207,7 @@ function VocabDAO(db) {
 				if (i == answer)
 				{				
 				var replacer = gram[chr].wrong;
-				output.answer = chr;				
+				
 				}
 				
 				else
@@ -218,8 +218,7 @@ function VocabDAO(db) {
 			output[chr] = replacer; 
 			}
 			
-			if (answer == 4)
-			output.answer = 'E';
+			output.answer = answer; 
 			
 			var Asplice = sentence.split("(A)");
 			output.preA = Asplice[0];
