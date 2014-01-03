@@ -57,7 +57,7 @@ span.labeled {
     display: inline-block;
     vertical-align: top;
 }
-span.labeled span.label {
+span.labeled span.labelx {
     display: block;
     text-align: center;
     border-top: 1px solid black;
