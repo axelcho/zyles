@@ -218,6 +218,9 @@ function VocabDAO(db) {
 			output[chr] = replacer; 
 			}
 			
+			if (answer == 4)
+			output.answer = 'E';
+			
 			var Asplice = sentence.split("(A)");
 			output.preA = Asplice[0];
 			

@@ -1,15 +1,46 @@
 {% extends 'layout.html' %}
 {% block content %}
-    Welcome {{username}}, this is an SAT Vocabulary Builder page running on MongoDB and node.js. Enjoy!
-	
-
-
-
+    Welcome {{username}}, this is an SAT Grammar Practice page running on MongoDB and node.js. Enjoy!<br/>
+	Choose an ungrammatical element from the following example. If all elements are grammatical, choose "No error". 
 	
 <div class = "row">	
 <div class ="col-xs-12 col-sm-6 col-md-8">	
 
+<p>
+
 {{item.preA}} <span class="labeled">{{item.A}}<span class="labelx">A</span></span> {{item.preB}} <span class="labeled">{{item.B}}<span class="labelx">B</span></span> {{item.preC}} <span class="labeled">{{item.C}}<span class="labelx">C</span></span> {{item.preD}} <span class="labeled">{{item.D}}<span class="labelx">D</span></span> {{item.postD}} <span class="labeled">No error<span class="labelx">E</span></span> 
+
+</p>
+<ol>
+<li><input type = 'radio' id = 'A'>A</li>
+<li><input type = 'radio' id = 'B'>B</li>
+<li><input type = 'radio' id = 'C'>C</li>
+<li><input type = 'radio' id = 'D'>D</li>
+<li><input type = 'radio' id = 'E'>E</li>
+</ol>
+
+
+<script type = 'text/javascript'>
+$("input").click(function(){
+if ($(this).attr('id') == {{item.answer}})
+{
+alert("You are right");
+location.reload(true);
+}
+
+else
+{
+alert("Wrong, try again");
+$(this).prop('checked', false);
+}
+
+
+});
+</script>
+
+
+
+
 
 <a href = "/grammar"><button type="button" class="btn btn-success">More</button></a>
 </div>
