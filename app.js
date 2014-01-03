@@ -34,6 +34,13 @@ MongoClient.connect('mongodb://localhost:27017/blog', function(err, db) {
     // Application routes
     routes(app, db);
 
-    app.listen(80);
+    var io = require('socket.io').listen(app.listen(80));
+	
+	io.sockets.on('connection', function (socket) {
+		socket.emit('message', { message: 'welcome to the chat' });
+		socket.on('send', function (data) {
+			io.sockets.emit('message', data);
+		});
+	});
     console.log('Express server listening on port 80');
 });
