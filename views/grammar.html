@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block content %}
-    Welcome {{username}}, this is an SAT Grammar Practice page running on MongoDB and node.js. Enjoy!<br/>
-	Choose an ungrammatical element from the following example. If all elements are grammatical, choose "No error". 
+    Welcome {{username}}, this is an SAT Grammar Practice page running on MongoDB and node.js. Enjoy!<br/><br/>
+	Choose an ungrammatical element from the following example. If all elements are grammatical, choose "No error". <br/>
 	
 <div class = "row">	
 <div class ="col-xs-12 col-sm-6 col-md-8">	
@@ -18,7 +18,7 @@
 <li><input type = 'radio' id = '3'>D</li>
 <li><input type = 'radio' id = '4'>E</li>
 </ol>
-{{item.answer}}
+
 
 <script type = 'text/javascript'>
 $("input").click(function(){
