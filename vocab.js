@@ -207,25 +207,22 @@ function VocabDAO(db) {
 				if (i == answer)
 				{				
 				var replacer = gram[chr].wrong;
-				output.answer = chr;				
+				output.answer = chr; 
 				}
 				
 				else
 				{				
 				var replacer = gram[chr].right;				
-				}
-				
-			output[chr] = replacer; 
+				}			
+			var styled = "<span class='labeled'>" + replacer + "<span class='label'>" + label + "</span></span>"; 
 			
-			//var styled = "<span class='labeled'>" + replacer + "<span class='label'>" + label + "</span></span>"; 
-			
-			//sentence = sentence.replace(label, styled);			
+			sentence = sentence.replace(label, styled);			
 			}
 			
-			//sentence = sentence + " <span class = 'labeled'>No error<span class = 'label'>E</span></span>"; 
+			sentence = sentence + " <span class = 'labeled'>No error<span class = 'label'>E</span></span>"; 
 			
 			output.sentence = sentence; 
-			console.log(output);
+		
 			callback(null, output); 			
 			});
 		});
