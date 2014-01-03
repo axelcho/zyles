@@ -216,16 +216,16 @@ function VocabDAO(db) {
 				}
 				
 			output[chr] = replacer; 
-	
-			var styled = "<span class='labeled'>" + replacer + "<span class='label'>" + label + "</span></span>"; 
 			
-			sentence = sentence.replace(label, styled);			
+			//var styled = "<span class='labeled'>" + replacer + "<span class='label'>" + label + "</span></span>"; 
+			
+			//sentence = sentence.replace(label, styled);			
 			}
 			
-			sentence = sentence + " <span class = 'labeled'>No error<span class = 'label'>E</span></span>"; 
+			//sentence = sentence + " <span class = 'labeled'>No error<span class = 'label'>E</span></span>"; 
 			
 			output.sentence = sentence; 
-		
+			console.log(output);
 			callback(null, output); 			
 			});
 		});
