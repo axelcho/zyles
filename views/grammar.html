@@ -9,7 +9,18 @@
 <div class = "row">	
 <div class ="col-xs-12 col-sm-6 col-md-8">	
 
-{{item.sentence}}
+<div id = 'sentence'>
+
+</div>
+<script type = 'text/javascript'>
+
+$("#sentence").html({{item.sentence}});
+
+</script>
+
+
+
+
 
 <a href = "/grammar"><button type="button" class="btn btn-success">More</button></a>
 </div>
