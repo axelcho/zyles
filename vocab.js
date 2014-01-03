@@ -226,7 +226,6 @@ function VocabDAO(db) {
 			
 			output.sentence = sentence; 
 		
-		
 			callback(null, output); 			
 			});
 		});
