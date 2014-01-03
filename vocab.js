@@ -217,14 +217,22 @@ function VocabDAO(db) {
 				
 			output[chr] = replacer; 
 			
-			//var styled = "<span class='labeled'>" + replacer + "<span class='label'>" + label + "</span></span>"; 
 			
-			//sentence = sentence.replace(label, styled);			
-			}
+			var Asplice = sentence.split("(A)");
+			output.preA = Asplice[0];
 			
-			//sentence = sentence + " <span class = 'labeled'>No error<span class = 'label'>E</span></span>"; 
+			var Bsplice = Asplice[1].split("(B)");
+			output.preB = Bsplice[0];
 			
-			output.sentence = sentence; 
+			var Csplice = Bsplice[1].split("(C)");
+			output.preC = Csplice[0];
+			
+			var Dsplice = Csplice[1].split("(D)");
+			output.preD = Dsplice[0];
+			output.postD = Dsplice[1];
+			
+			
+			
 			console.log(output);
 			callback(null, output); 			
 			});
