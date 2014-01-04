@@ -6,13 +6,20 @@ window.onload = function() {
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
     var name = document.getElementById("name");
+	var currentdate = new Date(); 
+	var datetime = "(" + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds() + ")";
  
     socket.on('message', function (data) {
         if(data.message) {
             messages.push(data);
             var html = '';
             for(var i=0; i<messages.length; i++) {
-                html += '<b>' + (messages[i].username ? messages[i].username : 'Server') + ': </b>';
+                html += '<b>' + (messages[i].username ? messages[i].username : 'Server') + ': </b>' + datetime;
                 html += messages[i].message + '<br />';
             }
             content.innerHTML = html;
