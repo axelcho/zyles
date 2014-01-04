@@ -5,25 +5,14 @@ window.onload = function() {
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
-    var name = document.getElementById("name");
-	
-	
+    var name = document.getElementById("name");		
  
     socket.on('message', function (data) {
-        if(data.message) {
-			var currentdate = new Date(); 
-			var datetime = "("
-				+ (currentdate.getMonth()+1)  + "/"
-                + currentdate.getDate() + "/" 
-                + currentdate.getFullYear() + " @ "  
-                + currentdate.getHours() + ":"  
-                + currentdate.getMinutes() + ":" 
-                + currentdate.getSeconds() + ") ";
-		
+        if(data.message) {		
             messages.push(data);
             var html = '';
             for(var i=0; i<messages.length; i++) {
-                html += '<b>' + (messages[i].username ? messages[i].username : 'Server') + ': </b>' + datetime;
+                html += '<b>' + (messages[i].username ? messages[i].username : 'Server') + ': </b>' + messages[i].entrydate;
                 html += messages[i].message + '<br />';
             }
             content.innerHTML = html;
@@ -38,8 +27,18 @@ window.onload = function() {
         if(name.value == "") {
             alert("Please type your name!");
         } else {
+		
+			var currentdate = new Date(); 
+			var datetime = "("
+				+ (currentdate.getMonth()+1)  + "/"
+                + currentdate.getDate() + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds() + ") ";
+		
             var text = field.value;
-            socket.emit('send', { message: text, username: name.value });
+            socket.emit('send', { message: text, username: name.value, entrydate: datetime });
 			field.value = "";
         }
     };
