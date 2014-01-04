@@ -7,12 +7,13 @@ window.onload = function() {
     var content = document.getElementById("content");
     var name = document.getElementById("name");
 	var currentdate = new Date(); 
-	var datetime = "(" + currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
+	var datetime = "("
+				+ (currentdate.getMonth()+1)  + "/"
+                + currentdate.getDate() + "/" 
                 + currentdate.getFullYear() + " @ "  
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
-                + currentdate.getSeconds() + ")";
+                + currentdate.getSeconds() + ") ";
  
     socket.on('message', function (data) {
         if(data.message) {
