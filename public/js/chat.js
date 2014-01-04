@@ -55,9 +55,7 @@ window.onload = function() {
   this.value = "";
 });
  
-	$("#trigger").click(function(){
-	$(this).text(($(this).text() == 'Close') ? 'Show' : 'Close');
-	
+	$("#trigger").click(function(){	
 	$("#chatwindow").toggle();
 	});
 }
