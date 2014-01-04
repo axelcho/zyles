@@ -56,6 +56,8 @@ window.onload = function() {
 });
  
 	$("#trigger").click(function(){
+	$(this).text(($(this).text() == 'Close') ? 'Show' : 'Close');
+	
 	$("#chatwindow").toggle();
 	});
 }
