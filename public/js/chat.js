@@ -48,5 +48,9 @@ window.onload = function() {
         }
     });
 });
+
+	$("input").focus(function() {
+  this.value = "";
+});
  
 }
