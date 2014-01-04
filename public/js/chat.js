@@ -51,7 +51,7 @@ window.onload = function() {
     });
 });
 
-	$("input").focus(function() {
+	$("#field").focus(function() {
   this.value = "";
 });
  
