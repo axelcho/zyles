@@ -37,7 +37,7 @@ MongoClient.connect('mongodb://localhost:27017/blog', function(err, db) {
     var io = require('socket.io').listen(app.listen(80));
 	
 	io.sockets.on('connection', function (socket) {
-		socket.emit('message', { message: 'welcome to the chat' });
+		socket.emit('message', { message: 'Welcome to the Zyles.' });
 		socket.on('send', function (data) {
 			io.sockets.emit('message', data);
 		});
