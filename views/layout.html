@@ -85,15 +85,20 @@ Welcome {{username}}
 <div class=  "container-brown">
 {% block content %}{% endblock %}
 </div>
+</div>
+<input type = "button" id = "trigger" value = "Chat">
+
+<div id = "chatwindow" style = "display:none;">
 
 <div id="content" style="width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;"></div>
 
-<div>
+<div id>
 <input type = 'text'  id = 'name' value = '{{username}}'><br/>
 <input type = 'text' id = 'field' value = 'Enter Your Message'><br/>
 <input type = 'button' value = 'send' id = 'send'>
 </div>
 </div>
+
 
 
 

@@ -55,4 +55,7 @@ window.onload = function() {
   this.value = "";
 });
  
+	$("#trigger").click(function(){
+	$("#chatwindow").toggle();
+	});
 }
