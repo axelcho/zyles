@@ -23,11 +23,13 @@ window.onload = function() {
         }
     });
  
+	//sendmessage event
     sendButton.onclick = sendMessage = function() {
         if(name.value == "") {
             alert("Please type your name!");
         } else {
 		
+		//add current date time
 			var currentdate = new Date(); 
 			var datetime = "("
 				+ (currentdate.getMonth()+1)  + "/"
@@ -43,6 +45,7 @@ window.onload = function() {
         }
     };
 	
+	//send message when enter key is pressed at the message
 	$(document).ready(function() {
     $("#field").keyup(function(e) {
         if(e.keyCode == 13) {
@@ -51,10 +54,12 @@ window.onload = function() {
     });
 });
 
+	//clean up message field
 	$("#field").focus(function() {
   this.value = "";
 });
  
+	//toggle chat div
 	$("#trigger").click(function(){	
 	$("#chatwindow").toggle();
 	});
