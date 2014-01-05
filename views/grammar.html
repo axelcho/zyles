@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
-    Welcome {{username}}, this is an SAT Grammar Practice page running on MongoDB and node.js. Enjoy!<br/>
+    Welcome {{username}}, this is an SAT Grammar Practice page. Enjoy!<br/>
 	Choose an ungrammatical element from the following example. If all elements are grammatical, choose "No error". <br/><br/>
 	
 <div class = "row">	
@@ -12,16 +12,16 @@
 
 </p>
 <ol>
-<li><input type = 'radio' id = '0'>A</li>
-<li><input type = 'radio' id = '1'>B</li>
-<li><input type = 'radio' id = '2'>C</li>
-<li><input type = 'radio' id = '3'>D</li>
-<li><input type = 'radio' id = '4'>E</li>
+<li><input type = 'radio' id = '0' class = "answers">A</li>
+<li><input type = 'radio' id = '1' class = "answers">B</li>
+<li><input type = 'radio' id = '2' class = "answers">C</li>
+<li><input type = 'radio' id = '3' class = "answers">D</li>
+<li><input type = 'radio' id = '4' class = "answers">E</li>
 </ol>
 
 
 <script type = 'text/javascript'>
-$("input").click(function(){
+$(".answers").click(function(){
 if ($(this).attr('id') == {{item.answer}})
 {
 alert("You are right");
