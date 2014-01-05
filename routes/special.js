@@ -122,7 +122,7 @@ function SpecialHandler (db) {
 	this.displayAddGrammar = function(req, res, next){
 		"use strict";
 		
-		if (!req.username || req.username != "Seong") return res.redirect("/vocabulary");
+		if (!req.username || req.username != "Seong") return res.redirect("/grammar");
 		
 		return res.render('addgrammar_template', {
 		sentence: "",
