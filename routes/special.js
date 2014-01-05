@@ -113,7 +113,7 @@ function SpecialHandler (db) {
 		voc.putGrammar(sentence, AC, AW, BC, BW, CC, CW, DC, DW, function(err, word){
 			"use strict";
 			if (err) return next(err);
-			return res.redirect("/vocabulary")
+			return res.redirect("/addvocab")
 		});
 	
 	}
@@ -122,7 +122,7 @@ function SpecialHandler (db) {
 	this.displayAddGrammar = function(req, res, next){
 		"use strict";
 		
-		if (!req.username || req.username != "Seong") return res.redirect("/grammar");
+		if (!req.username || req.username != "Seong") return res.redirect("/addgrammar");
 		
 		return res.render('addgrammar_template', {
 		sentence: "",
