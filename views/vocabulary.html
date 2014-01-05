@@ -16,11 +16,11 @@
 
 <ol>
 {% for def in item.definition %}
-<li><input type = 'radio' id = {{def.id}} class="radio"> {{def.meaning}}</li>
+<li><input type = 'radio' id = {{def.id}} class="answers"> {{def.meaning}}</li>
 {% endfor %}
 </ol>
 <script type = 'text/javascript'>
-$(".radio").click(function(){
+$(".answers").click(function(){
 if ($(this).attr('id') == {{item.answer}})
 {
 alert("You are right");
